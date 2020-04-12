@@ -5,8 +5,8 @@ using UnityEngine;
 public class HeroMovment : MonoBehaviour
 {
     float speed = 4;
-    float runspeed = 8;
-    float rotSpeed = 80;
+    float runspeed = 5;
+    float rotSpeed = 180;
     float rot = 0f;
     float gravity = 8;
     int move = 2;
