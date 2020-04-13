@@ -7,15 +7,17 @@ public class CharacterStats : MonoBehaviour
     public Stat damage;
     public Stat armor;
     public bool isDeath { get; protected set; }
+    public bool isAttacking;
     void Awake()
     {
         currentHealth = maxHealth;
         isDeath = false;
+        isAttacking = false;
     }
 
     public void TakeDamage(int damage)
     {
-        damage -= armor.GetVaule();
+        damage -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
         currentHealth -= damage;
 

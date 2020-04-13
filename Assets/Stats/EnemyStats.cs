@@ -13,6 +13,5 @@ public class EnemyStats : CharacterStats
     {
         animator.SetInteger("animation", 4);
         isDeath = true;
-        Debug.Log("DIED DIED!");
     }
 }

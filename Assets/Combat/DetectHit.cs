@@ -23,8 +23,8 @@ public class DetectHit : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player") return;
-        selfStats.TakeDamage(playerStats.damage.GetVaule());
 
-        Debug.Log(playerStats.damage.GetVaule());
+        if(playerStats.isAttacking)
+        selfStats.TakeDamage(playerStats.damage.GetValue());
     }
 }

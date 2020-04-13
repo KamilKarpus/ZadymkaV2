@@ -11,18 +11,20 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     Animator anim;
     EnemyStats stats;
+    PlayerStats playerStats;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         stats = GetComponent<EnemyStats>();
+        playerStats = PlayerManager.instance.player.GetComponentInChildren<PlayerStats>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
-        if (!stats.isDeath)
+        if (!stats.isDeath && !playerStats.isDeath)
         {
             if (distance <= lookRadius)
             {
@@ -43,6 +45,11 @@ public class EnemyController : MonoBehaviour
             {
                 anim.SetInteger("animation", 0);
             }
+        }
+        else if(!stats.isDeath && playerStats.isDeath)
+        {
+            anim.SetInteger("animation", 0);
+            isAttacking = false;
         }
 
     }

@@ -8,7 +8,7 @@ public class Stat
 {
     [SerializeField]
     private int _baseValue;
-    public int GetVaule()
+    public int GetValue()
     {
         return _baseValue;
     }
