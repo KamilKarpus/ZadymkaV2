@@ -5,66 +5,61 @@ using UnityEngine;
 public class HeroMovment : MonoBehaviour
 {
     float speed = 4;
-    float runspeed = 5;
-    float rotSpeed = 180;
+    float rotSpeed = 300;
     float rot = 0f;
     float gravity = 8;
-    int move = 2;
     bool canClick = true;
     int numberOfClick = 0;
     Vector3 moveDir = Vector3.zero;
 
     CharacterController controller;
     Animator anim;
+    PlayerStats stats;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        stats = GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (controller.isGrounded)
+        if (!stats.isDeath)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
+            if (controller.isGrounded)
             {
-                anim.SetInteger("condition", 6);
-                moveDir = new Vector3(0, 0, 1);
-                moveDir *= runspeed;
-                moveDir = transform.TransformDirection(moveDir);
-                numberOfClick = 0;
-                anim.SetBool("isRunning", true);
-            }
-            else if (Input.GetKey(KeyCode.W))
-            {
-                anim.SetInteger("condition", 1);
-                moveDir = new Vector3(0, 0, 1);
-                moveDir *= speed;
-                moveDir = transform.TransformDirection(moveDir);
-                numberOfClick = 0;
-                anim.SetBool("isRunning", true);
-            }
-            else if (Input.GetKeyUp(KeyCode.W))
-            {
-                anim.SetInteger("condition", 0);
-                moveDir = Vector3.zero;
-                anim.SetBool("isRunning", false);
-            }
-            else if (Input.GetMouseButtonDown(0))
-            {
-                Attacking();
-            }
-            rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
-            transform.eulerAngles = new Vector3(0, rot, 0);
+                if (Input.GetKey(KeyCode.W))
+                {
+                    anim.SetInteger("condition", 1);
+                    moveDir = new Vector3(0, 0, 1);
+                    moveDir *= speed;
+                    moveDir = transform.TransformDirection(moveDir);
+                    numberOfClick = 0;
+                    anim.SetBool("isRunning", true);
+                    stats.isAttacking = false;
+                }
+                if (Input.GetKeyUp(KeyCode.W))
+                {
+                    anim.SetInteger("condition", 0);
+                    moveDir = Vector3.zero;
+                    anim.SetBool("isRunning", false);
+                }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Attacking();
+                }
+                rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
+                transform.eulerAngles = new Vector3(0, rot, 0);
 
-            moveDir.y -= gravity * Time.deltaTime;
-            controller.Move(moveDir * Time.deltaTime);
+                moveDir.y -= gravity * Time.deltaTime;
+                controller.Move(moveDir * Time.deltaTime);
+            }
         }
-
     }
     void Attacking()
     {
+        stats.isAttacking = true;
         if (canClick)
         {
             numberOfClick++;
@@ -122,5 +117,4 @@ public class HeroMovment : MonoBehaviour
             }
         }
     }
-
 }
