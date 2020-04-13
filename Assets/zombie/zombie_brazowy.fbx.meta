@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: 218e02f0be4d2be429d1e284f555e2f0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: basic_rig
+    100002: basic_rig Head
+    100004: basic_rig Head_end
+    100006: basic_rig L Calf
+    100008: basic_rig L Clavicle
+    100010: basic_rig L Finger0
+    100012: basic_rig L Finger0_end
+    100014: basic_rig L Finger1
+    100016: basic_rig L Finger1_end
+    100018: basic_rig L Finger2
+    100020: basic_rig L Finger2_end
+    100022: basic_rig L Foot
+    100024: basic_rig L Forearm
+    100026: basic_rig L Hand
+    100028: basic_rig L Thigh
+    100030: basic_rig L Toe0
+    100032: basic_rig L Toe0_end
+    100034: basic_rig L UpperArm
+    100036: basic_rig Neck
+    100038: basic_rig Pelvis
+    100040: basic_rig Pelvis_end
+    100042: basic_rig R Calf
+    100044: basic_rig R Clavicle
+    100046: basic_rig R Finger0
+    100048: basic_rig R Finger0_end
+    100050: basic_rig R Finger1
+    100052: basic_rig R Finger1_end
+    100054: basic_rig R Finger2
+    100056: basic_rig R Finger2_end
+    100058: basic_rig R Foot
+    100060: basic_rig R Forearm
+    100062: basic_rig R Hand
+    100064: basic_rig R Thigh
+    100066: basic_rig R Toe0
+    100068: basic_rig R Toe0_end
+    100070: basic_rig Spine
+    100072: basic_rig Spine1
+    100074: basic_rig UpperArm
+    100076: //RootNode
+    100078: zombie_zombie4
+    400000: basic_rig
+    400002: basic_rig Head
+    400004: basic_rig Head_end
+    400006: basic_rig L Calf
+    400008: basic_rig L Clavicle
+    400010: basic_rig L Finger0
+    400012: basic_rig L Finger0_end
+    400014: basic_rig L Finger1
+    400016: basic_rig L Finger1_end
+    400018: basic_rig L Finger2
+    400020: basic_rig L Finger2_end
+    400022: basic_rig L Foot
+    400024: basic_rig L Forearm
+    400026: basic_rig L Hand
+    400028: basic_rig L Thigh
+    400030: basic_rig L Toe0
+    400032: basic_rig L Toe0_end
+    400034: basic_rig L UpperArm
+    400036: basic_rig Neck
+    400038: basic_rig Pelvis
+    400040: basic_rig Pelvis_end
+    400042: basic_rig R Calf
+    400044: basic_rig R Clavicle
+    400046: basic_rig R Finger0
+    400048: basic_rig R Finger0_end
+    400050: basic_rig R Finger1
+    400052: basic_rig R Finger1_end
+    400054: basic_rig R Finger2
+    400056: basic_rig R Finger2_end
+    400058: basic_rig R Foot
+    400060: basic_rig R Forearm
+    400062: basic_rig R Hand
+    400064: basic_rig R Thigh
+    400066: basic_rig R Toe0
+    400068: basic_rig R Toe0_end
+    400070: basic_rig Spine
+    400072: basic_rig Spine1
+    400074: basic_rig UpperArm
+    400076: //RootNode
+    400078: zombie_zombie4
+    2100000: Face
+    2100002: Body
+    4300000: zombie_zombie4
+    7400000: basic_rig|zombieAttack
+    7400002: basic_rig|zombieDeath
+    7400004: basic_rig|zombieDeathIdle
+    7400006: basic_rig|zombieIdle
+    7400008: basic_rig|zombieIdleLeft
+    7400010: basic_rig|zombieIdleRight
+    7400012: basic_rig|zombieRun
+    7400014: basic_rig|zombieRun (1)
+    9500000: //RootNode
+    13700000: zombie_zombie4
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: basic_rig|zombieRun (1)
+      takeName: basic_rig|zombieRun
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: basic_rig|zombieDeath
+      takeName: basic_rig|zombieDeath
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: basic_rig|zombieDeathIdle
+      takeName: basic_rig|zombieDeathIdle
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: basic_rig|zombieIdle
+      takeName: basic_rig|zombieIdle
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: basic_rig|zombieIdleLeft
+      takeName: basic_rig|zombieIdleLeft
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: basic_rig|zombieIdleRight
+      takeName: basic_rig|zombieIdleRight
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: basic_rig|zombieRun
+      takeName: basic_rig|zombieRun
+      firstFrame: 158
+      lastFrame: 202
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

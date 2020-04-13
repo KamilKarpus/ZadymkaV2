@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,10 +12,7 @@ public class CameraFollow : MonoBehaviour
     public float scrollSensitivity = 1;
     void Start()
     {
-        
     }
-
-    // Update is called once per frame
     void Update()
     {
         float num = Input.GetAxis("Mouse ScrollWheel");
