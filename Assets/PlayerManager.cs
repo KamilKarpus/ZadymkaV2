@@ -8,7 +8,8 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager instance;
     void Awake()
-    { 
+    {
+        Cursor.visible = true;
         instance = this;
     }
 

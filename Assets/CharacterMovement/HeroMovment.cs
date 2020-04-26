@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HeroMovment : MonoBehaviour
 {
@@ -12,14 +14,18 @@ public class HeroMovment : MonoBehaviour
     int numberOfClick = 0;
     Vector3 moveDir = Vector3.zero;
 
+    public LayerMask mask;
+
+    NavMeshAgent agent;
+    public Camera cam;
     CharacterController controller;
     Animator anim;
     PlayerStats stats;
     void Start()
     {
-        controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         stats = GetComponent<PlayerStats>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -27,39 +33,45 @@ public class HeroMovment : MonoBehaviour
     {
         if (!stats.isDeath)
         {
-            if (controller.isGrounded)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (Input.GetKey(KeyCode.W))
+                stats.isAttacking = false;
+                numberOfClick = 0;
+                anim.SetInteger("condition", 0);
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if(Physics.Raycast(ray, out hit))
                 {
-                    anim.SetInteger("condition", 1);
-                    moveDir = new Vector3(0, 0, 1);
-                    moveDir *= speed;
-                    moveDir = transform.TransformDirection(moveDir);
-                    numberOfClick = 0;
-                    anim.SetBool("isRunning", true);
-                    stats.isAttacking = false;
+                    agent.SetDestination(hit.point);
                 }
-                if (Input.GetKeyUp(KeyCode.W))
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    anim.SetInteger("condition", 0);
-                    moveDir = Vector3.zero;
-                    anim.SetBool("isRunning", false);
-                }
-                if (Input.GetMouseButtonDown(0))
-                {
+                    if (hit.collider.gameObject.tag == "Enemy")
+                    {
+                        FaceTarget(hit.collider.gameObject.transform);
+
+                    }
                     Attacking();
                 }
-                rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
-                transform.eulerAngles = new Vector3(0, rot, 0);
-
-                moveDir.y -= gravity * Time.deltaTime;
-                controller.Move(moveDir * Time.deltaTime);
-            }
+               
+            }   
         }
+    }
+    void FaceTarget(Transform target)
+    {
+        var direction = (target.position - transform.position).normalized;
+        var lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 250f);
     }
     void Attacking()
     {
-        stats.isAttacking = true;
         if (canClick)
         {
             numberOfClick++;
@@ -67,6 +79,7 @@ public class HeroMovment : MonoBehaviour
         }
         if (numberOfClick == 1 )
         {
+            stats.isAttacking = true;
             anim.SetInteger("condition", 2);
         }
     }
@@ -105,16 +118,6 @@ public class HeroMovment : MonoBehaviour
             anim.SetInteger("condition", 0);
             numberOfClick = 0;
             canClick = true;
-        }
-    }
-    public void Sprint()
-    {
-        if (controller.isGrounded)
-        {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                anim.SetInteger("condition", 6);
-            }
         }
     }
 }
