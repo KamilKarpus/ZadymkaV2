@@ -955,12 +955,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damage:
-    _baseValue: 25
+    _baseValue: 50
   armor:
-    _baseValue: 0
+    _baseValue: 20
   isAttacking: 0
   healthBar: {fileID: 1161533793}
-  level: 0
+  level: 5
   name: 
   changingText: {fileID: 0}
   nameText: {fileID: 0}
@@ -5780,7 +5780,7 @@ MonoBehaviour:
     _baseValue: 5
   isAttacking: 0
   healthBar: {fileID: 2082078080}
-  level: 0
+  level: 5
   name: 
   changingText: {fileID: 0}
   nameText: {fileID: 0}
