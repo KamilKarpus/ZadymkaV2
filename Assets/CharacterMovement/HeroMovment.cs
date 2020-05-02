@@ -6,10 +6,6 @@ using UnityEngine.AI;
 
 public class HeroMovment : MonoBehaviour
 {
-    float speed = 4;
-    float rotSpeed = 300;
-    float rot = 0f;
-    float gravity = 8;
     bool canClick = true;
     int numberOfClick = 0;
     Vector3 moveDir = Vector3.zero;

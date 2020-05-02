@@ -16,10 +16,11 @@ public class CharacterStats : MonoBehaviour
 
     void Start()
     {
-        
     }
     void Awake()
     {
+        name = "Przemek";
+        level = 1;
         currentHealth = maxHealth;
         isDeath = false;
         isAttacking = false;

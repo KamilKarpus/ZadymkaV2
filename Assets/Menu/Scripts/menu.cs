@@ -10,7 +10,8 @@ public class menu : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        menuUI = (Canvas)GetComponent<Canvas>();
+
+		menuUI = (Canvas)GetComponent<Canvas>();
         btnStart = btnStart.GetComponent<Button>();
 
         Time.timeScale = 0;
