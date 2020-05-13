@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     Animator anim;
     EnemyStats stats;
     PlayerStats playerStats;
+    public Canvas menuUI;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -44,12 +45,19 @@ public class EnemyController : MonoBehaviour
             else
             {
                 anim.SetInteger("animation", 0);
+                
             }
         }
         else if(!stats.isDeath && playerStats.isDeath)
         {
             anim.SetInteger("animation", 0);
             isAttacking = false;
+            
+        }
+
+        if (stats.isDeath)
+        {
+            menuUI.enabled = false;
         }
 
     }

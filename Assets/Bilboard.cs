@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Bilboard : MonoBehaviour
 {
     public Transform cam;
+    
+    private EnemyStats enemyStats;
+    public Canvas menuUI;
     // Start is called before the first frame update
 
 
@@ -12,7 +16,7 @@ public class Bilboard : MonoBehaviour
     void LateUpdate()
     {
         transform.LookAt(transform.position + cam.forward);
-        //transform.LookAt(cam.position);
+        
     }
 
     //void Update()
