@@ -23,6 +23,8 @@ public class PlayerStats : CharacterStats
             level++;
             availablePoints++;
             neededExp*=expMultiplayer;
+            currentHealth = maxHealth;
+            healthBar.SetHealth(currentHealth);
         }
     }
     public bool AddStrength()

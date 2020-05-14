@@ -25,6 +25,6 @@ public class DetectHit : MonoBehaviour
         if (other.gameObject.tag != "Player") return;
 
         if(playerStats.isAttacking)
-        selfStats.TakeDamage(playerStats.damage.GetValue());
+        selfStats.TakeDamage(playerStats.damage.GetValue() + playerStats.strength);
     }
 }
