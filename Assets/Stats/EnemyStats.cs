@@ -20,8 +20,6 @@ public class EnemyStats : CharacterStats
     {
         Id = Guid.NewGuid();
         playerStats = PlayerManager.instance.player.GetComponentInChildren<PlayerStats>();
-        level = 1;
-        name = "Zombie";
         animator = GetComponent<Animator>();
         deathCounter = 0;
         menager = PlayerManager.instance.map.GetComponent<GameManager>(); 

@@ -11,6 +11,7 @@ public class PlayerStats : CharacterStats
     public Text lvlText;
     public int strength;
     public int availablePoints;
+    EquipmentSystem equipment;
 
     public float currentExp = 0;
     public float neededExp;
@@ -37,6 +38,24 @@ public class PlayerStats : CharacterStats
         }
         return false;
     }
+    public bool RestoreHealth(int healthToAdd)
+    {
+        if (currentHealth >= maxHealth)
+        {
+            return false;
+        }
+        if (equipment.HasPotions)
+        {
+            currentHealth += healthToAdd;
+            if (currentHealth >= maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            healthBar.SetHealth(currentHealth);
+            return true;
+        }
+        return false;
+    }
 
     public bool AddHealth()
     {
@@ -57,6 +76,7 @@ public class PlayerStats : CharacterStats
         name = "Pszemek";
         strength = 10;
         availablePoints = 1;
+        equipment = GetComponent<EquipmentSystem>();
     }
     protected override void Die()
     {
