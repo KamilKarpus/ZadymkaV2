@@ -33,6 +33,8 @@ public class StatsMenu : MonoBehaviour
 		Level.text = playerStats.level.ToString();
 		points.text = $"Punkty do rozdania : {playerStats.availablePoints}";
 		exp.text = $"Exp: {playerStats.currentExp}/{playerStats.neededExp}";
+		strength.text = $"Siła {playerStats.strength}";
+		health.text = $"Zdrowie {playerStats.maxHealth}";
 		if (Input.GetKeyUp(KeyCode.C))
 		{ //Jeżeli naciśnięto klawisz "Escape"
 			menuUI.enabled = !menuUI.enabled;//Ukrycie/pokazanie menu.
