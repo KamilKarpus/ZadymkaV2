@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,14 @@ public class PlayerStats : CharacterStats
     public int strength;
     public int availablePoints;
     EquipmentSystem equipment;
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        InMemoryCache.currentHealth = currentHealth;
+        InMemoryCache.exp = currentExp;
+        InMemoryCache.neededExp = neededExp;
+    }
 
     public float currentExp = 0;
     public float neededExp;
@@ -26,6 +35,11 @@ public class PlayerStats : CharacterStats
             neededExp*=expMultiplayer;
             currentHealth = maxHealth;
             healthBar.SetHealth(currentHealth);
+            InMemoryCache.maxHealth = maxHealth;
+            InMemoryCache.currentHealth = currentHealth;
+            InMemoryCache.level = level;
+            InMemoryCache.neededExp = neededExp;
+            CalculateLevel();
         }
     }
     public bool AddStrength()
@@ -33,6 +47,7 @@ public class PlayerStats : CharacterStats
         if(availablePoints > 0)
         {
             strength += 10;
+            InMemoryCache.strenght = strength;
             availablePoints--;
             return true;
         }
@@ -52,6 +67,8 @@ public class PlayerStats : CharacterStats
                 currentHealth = maxHealth;
             }
             healthBar.SetHealth(currentHealth);
+            InMemoryCache.maxHealth = maxHealth;
+            InMemoryCache.currentHealth = currentHealth;
             return true;
         }
         return false;
@@ -63,20 +80,42 @@ public class PlayerStats : CharacterStats
         {
             maxHealth += 10;
             availablePoints--;
+            InMemoryCache.maxHealth = maxHealth;
+            InMemoryCache.currentHealth = currentHealth;
             return true;
+
         }
         return false;
     }
 
     private void Start()
     {
-        neededExp = 100;
         animator = GetComponent<Animator>();
-        level =  1;
-        name = "Pszemek";
-        strength = 10;
-        availablePoints = 1;
         equipment = GetComponent<EquipmentSystem>();
+
+        if (!InMemoryCache.isMemoryEnabled)
+        {
+            neededExp = 100;
+            level = 1;
+            name = "Pszemek";
+            strength = 10;
+            availablePoints = 1;
+            InMemoryCache.isMemoryEnabled = true;
+            InMemoryCache.strenght = strength;
+            InMemoryCache.maxHealth = maxHealth;
+            InMemoryCache.currentHealth = currentHealth;
+        }
+        else
+        {
+            neededExp = InMemoryCache.neededExp;
+            name = "Pszemek";
+            level = InMemoryCache.level;
+            equipment = GetComponent<EquipmentSystem>();
+            strength = InMemoryCache.strenght;
+            currentExp = InMemoryCache.exp;
+            maxHealth = InMemoryCache.maxHealth;
+            currentHealth = InMemoryCache.currentHealth;
+        }
     }
     protected override void Die()
     {
